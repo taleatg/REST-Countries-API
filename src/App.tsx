@@ -1,20 +1,22 @@
-import React from "react";
-import "./App.css";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { CardList } from './components/Card/CardList';
+import { ALL_COUNTRIES } from './config';
+import { CountryType } from './interface';
+import { Header } from './components/Header/Header';
 
 function App() {
+  const [countries, setCountries] = useState([] as CountryType[]);
+
+  useEffect(() => {
+    axios.get(ALL_COUNTRIES).then(({ data }) => setCountries(data));
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <CardList countries={countries} />
+    </>
   );
 }
 
