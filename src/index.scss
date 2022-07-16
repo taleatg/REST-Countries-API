@@ -6,3 +6,27 @@ body {
   font-family: 'Nunito Sans', sans-serif;
   font-size: 14px;
 }
+
+.search-wrapper {
+  display: flex;
+  width: 100%;
+  max-width: 1360px;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 30px 10px;
+
+  .search {
+    display: flex;
+    align-items: center;
+    height: 50px;
+  }
+}
+
+.loading-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -1,14 +1,33 @@
 import React from 'react';
-import { CountryType } from '../../interface';
+import { CountryType } from '../../service/interface';
 import { OneCountryCard } from './Card';
 import './Cards.scss';
+import { useAppSelector } from '../../store/store';
+import { Loading } from '../Loading';
+import { Typography } from '@mui/material';
 
-export const CardList = (props: { countries: CountryType[] }) => {
+export const CardList = () => {
+  const { isLoading, result } = useAppSelector((state: any) => state.searchReducer);
+
   return (
     <div className="card-list">
-      {props.countries.map((country) => {
-        return <OneCountryCard country={country} key={country.name} />;
-      })}
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <>
+          {result.length ? (
+            <>
+              {result.map((country: CountryType) => {
+                return <OneCountryCard country={country} key={country.name} />;
+              })}
+            </>
+          ) : (
+            <Typography variant="h4" component="h2">
+              Countries not found...
+            </Typography>
+          )}
+        </>
+      )}
     </div>
   );
 };

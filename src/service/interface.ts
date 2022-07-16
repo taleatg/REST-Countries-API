@@ -8,3 +8,8 @@ export interface CountryType {
   population: number;
   region: string;
 }
+
+export interface SearchData {
+  isLoading: boolean;
+  result: CountryType[];
+}
