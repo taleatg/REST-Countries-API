@@ -22,7 +22,7 @@ export const CardList = () => {
               })}
             </>
           ) : (
-            <Typography variant="h4" component="h2">
+            <Typography variant="h4" component="h2" sx={{ height: '82vh' }}>
               Countries not found...
             </Typography>
           )}

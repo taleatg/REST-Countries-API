@@ -19,7 +19,12 @@ function App() {
   }, [dispatch, getSearchResult]);
 
   return (
-    <Box sx={{ color: mode === 'light' ? 'hsl(0, 0%, 100%)' : 'hsl(200, 15%, 8%)' }}>
+    <Box
+      sx={{
+        color: mode === 'light' ? 'hsl(0, 0%, 100%)' : 'hsl(200, 15%, 8%)',
+        background: mode === 'light' ? 'hsl(207, 26%, 17%)' : 'hsl(0, 0%, 98%)',
+      }}
+    >
       <Header />
       <div className="search-wrapper">
         <Search />

@@ -30,3 +30,18 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: none;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(154, 154, 154);;
+  border-radius: 5px;
+}
