@@ -13,6 +13,8 @@ export const Search = () => {
   const { mode } = useAppSelector((state) => state.themeReducer);
 
   const searchHandler: SubmitHandler<FieldValues> = (input: FieldValues) => {
+    dispatch(getSearchResult({ result: [], isLoading: true }));
+
     axios
       .get(searchByCountry(input.search))
       .then(({ data }) => dispatch(getSearchResult({ result: data, isLoading: false })))
@@ -28,6 +30,7 @@ export const Search = () => {
           borderRadius: '5px',
           width: '300px',
           background: mode === 'light' ? 'hsl(207, 26%, 17%)' : 'hsl(0, 0%, 98%)',
+          ml: 1,
         }}
       >
         <Button sx={{ minWidth: '20px' }} type="submit" onClick={handleSubmit(searchHandler)}>
@@ -44,8 +47,12 @@ export const Search = () => {
           name="search"
           render={({ field }: any) => (
             <TextField
+              sx={{
+                input: { color: () => (mode === 'light' ? 'hsl(0, 0%, 100%)' : 'hsl(200, 15%, 8%)') },
+                textTransform: 'capitalize',
+                pl: '15px',
+              }}
               autoComplete="off"
-              sx={{ pl: '15px' }}
               variant="standard"
               InputProps={{ disableUnderline: true }}
               placeholder="Search for a country..."

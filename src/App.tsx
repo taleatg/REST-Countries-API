@@ -23,6 +23,8 @@ function App() {
       sx={{
         color: mode === 'light' ? 'hsl(0, 0%, 100%)' : 'hsl(200, 15%, 8%)',
         background: mode === 'light' ? 'hsl(207, 26%, 17%)' : 'hsl(0, 0%, 98%)',
+        // height: '100%',
+        minHeight: '100vh',
       }}
     >
       <Header />

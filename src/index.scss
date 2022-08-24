@@ -15,11 +15,20 @@ body {
   margin: 0 auto;
   padding: 30px 10px;
 
-  .search {
+  .search, .filter {
     display: flex;
     align-items: center;
     height: 50px;
   }
+
+  .MuiSelect-filled {
+    background: none;
+    padding: 0 0 0 16px;
+  }
+
+ .Mui-selected {
+   background: none;
+ }
 }
 
 .loading-wrapper {

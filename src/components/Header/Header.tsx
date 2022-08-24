@@ -19,12 +19,12 @@ export const Header = () => {
             color: () => (mode === 'light' ? 'hsl(0, 0%, 100%)' : 'hsl(200, 15%, 8%)'),
             textTransform: 'capitalize',
           }}
-          startIcon={mode === 'light' ? <NightlightRoundIcon /> : <Brightness7Icon />}
+          startIcon={mode === 'light' ? <Brightness7Icon /> : <NightlightRoundIcon />}
           onClick={() => {
             dispatch(changeTheme(mode === 'light' ? 'dark' : 'light'));
           }}
         >
-          {mode === 'light' ? 'Dark Mode' : 'Light Mode'}
+          {mode === 'light' ? 'Light Mode' : 'Dark Mode'}
         </Button>
       </div>
     </header>
