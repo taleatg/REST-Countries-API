@@ -4,6 +4,7 @@ import Brightness7Icon from '@mui/icons-material/Brightness7';
 import './Header.scss';
 import { useAppDispatch, useAppSelector } from '../../store/store';
 import { themeSlice } from '../../store/reducers/themeSlice';
+import { NavLink } from 'react-router-dom';
 
 export const Header = () => {
   const dispatch = useAppDispatch();
@@ -13,7 +14,12 @@ export const Header = () => {
   return (
     <header className="header">
       <div className="header-wrapper">
-        <h2>Where in the world?</h2>
+        <NavLink
+          to="/"
+          style={{ textDecoration: 'none', color: mode === 'light' ? 'hsl(0, 0%, 100%)' : 'hsl(200, 15%, 8%)' }}
+        >
+          <h2>Where in the world?</h2>
+        </NavLink>
         <Button
           sx={{
             color: () => (mode === 'light' ? 'hsl(0, 0%, 100%)' : 'hsl(200, 15%, 8%)'),

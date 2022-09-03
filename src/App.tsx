@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
-import { CardList } from './components/Card/CardList';
 import { ALL_COUNTRIES } from './service/config';
 import { Header } from './components/Header/Header';
-import { Search } from './components/Search/Search';
-import { Filter } from './components/Filter/Filter';
 import { useAppDispatch, useAppSelector } from './store/store';
 import { searchSlice } from './store/reducers/searchSlice';
 import Box from '@mui/material/Box';
+import { Route, Routes } from 'react-router-dom';
+import { HomePage } from './components/pages/HomePage';
+import { NotFoundPage } from './components/pages/NotFoundPage';
+import { InfoAboutCountry } from './components/pages/InfoAboutCountry';
 
 function App() {
   const dispatch = useAppDispatch();
@@ -23,16 +24,15 @@ function App() {
       sx={{
         color: mode === 'light' ? 'hsl(0, 0%, 100%)' : 'hsl(200, 15%, 8%)',
         background: mode === 'light' ? 'hsl(207, 26%, 17%)' : 'hsl(0, 0%, 98%)',
-        // height: '100%',
         minHeight: '100vh',
       }}
     >
       <Header />
-      <div className="search-wrapper">
-        <Search />
-        <Filter />
-      </div>
-      <CardList />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/country/:name" element={<InfoAboutCountry />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
     </Box>
   );
 }

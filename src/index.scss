@@ -9,7 +9,6 @@ body {
 
 .search-wrapper {
   display: flex;
-  width: 100%;
   max-width: 1360px;
   justify-content: space-between;
   margin: 0 auto;
@@ -29,6 +28,16 @@ body {
  .Mui-selected {
    background: none;
  }
+}
+
+.navLink {
+  text-decoration: none;
+  width: calc((100% - 1rem) / 3);
+  min-width: 250px;
+}
+
+.borders {
+  margin: 0 10px;
 }
 
 .loading-wrapper {
