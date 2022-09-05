@@ -3,7 +3,7 @@ export interface CountryType {
   nativeName: string;
   capital: string;
   flags: {
-    png: string;
+    svg: string;
   };
   population: number;
   region: string;

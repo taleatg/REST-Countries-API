@@ -29,7 +29,7 @@ export const OneCountryCard = (props: { country: CountryType }) => {
         }}
       >
         <CardActionArea>
-          <CardMedia component="img" image={props.country.flags.png} alt={props.country.name} className="card-img" />
+          <CardMedia component="img" image={props.country.flags.svg} alt={props.country.name} className="card-img" />
           <CardContent>
             <Typography gutterBottom variant="h4" component="div" sx={theme}>
               {props.country.name}

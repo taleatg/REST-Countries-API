@@ -7,7 +7,7 @@ const CountryState = {
     nativeName: '',
     capital: '',
     flags: {
-      png: '',
+      svg: '',
     },
     population: 0,
     region: '',
@@ -40,7 +40,7 @@ export const countrySlice = createSlice({
       state.country.name = action.payload.name;
       state.country.nativeName = action.payload.nativeName;
       state.country.capital = action.payload.capital;
-      state.country.flags.png = action.payload.flags.png;
+      state.country.flags.svg = action.payload.flags.svg;
       state.country.population = action.payload.population;
       state.country.region = action.payload.region;
       state.country.subregion = action.payload.subregion;
