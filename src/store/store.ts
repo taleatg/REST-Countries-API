@@ -2,12 +2,10 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import searchReducer from './reducers/searchSlice';
 import themeReducer from './reducers/themeSlice';
-import countryReducer from './reducers/countrySlice';
 
 const rootReducer = combineReducers({
   searchReducer,
   themeReducer,
-  countryReducer,
 });
 
 const store = configureStore({
